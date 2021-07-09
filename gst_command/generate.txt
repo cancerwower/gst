@@ -1,0 +1,6 @@
+gst-launch-1.0 v4l2src device="/dev/video0" num-buffers=300 ! 'video/x-raw, format=UYVY, width=1920, height=1080, framerate=30/1' ! filesink location=test.yuv
+
+
+gst-launch-1.0 v4l2src device="/dev/video0" ! video/x-raw,format=UYVY,width=1920,height=1080,framerate=30/1 ! videorate ! videoscale ! videoconvert ! xvimagesink
+
+
