@@ -70,7 +70,7 @@ int main()
 	g_object_set (G_OBJECT (app->filter1), "caps", filtercaps1, NULL);
 	GstCaps *filtercaps3 = gst_caps_new_simple ("video/x-h264",
 		"stream-format", G_TYPE_STRING, "byte-stream",
-		NULL);*/
+		NULL);
 	g_object_set (G_OBJECT (app->filter3), "caps", filtercaps3, NULL);
 	g_object_set (G_OBJECT (app->sink), "location", "output.ts", NULL);
 
@@ -99,7 +99,7 @@ int main()
 	size_t bytesread = fread(filebuffer, 1 , (1920*1080*2*30*10), testfile); //Read to filebuffer
 	//printf("File Read: %zu bytes\n", bytesread);
 
-	GstBuffer *pushbuffer; //Actual databuffer
+	GstBufferList *pushbuffer; //Actual databuffer
 	GstFlowReturn ret; //Return value
 	pushbuffer = gst_buffer_new_wrapped (filebuffer, 1920*1080*2*30*10); //Wrap the data
 
